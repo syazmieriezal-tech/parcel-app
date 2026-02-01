@@ -1,0 +1,45 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+
+    <div class="page-header">
+        <h2>Search Parcel</h2>
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Parcel ID</th>
+                    <th>Tracking Number</th>
+                    <th>Parcel Type</th>
+                    <th>Date Received</th>
+                    <th>Date Collected</th>
+                    <th>Recipient Name</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for parcel in parcels %}
+                <tr>
+                    <td>{{ parcel[0] }}</td>
+                    <td><strong>{{ parcel[1] }}</strong></td>
+                    <td>{{ parcel[2] }}</td>
+                    <td>{{ parcel[3] }}</td>
+                    <td>{{ parcel[4] if parcel[4] else '-' }}</td>
+                    <td>{{ parcel[5] }}</td>
+                    <td>{{ parcel[6] }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7">Tiada data parcel dijumpai</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

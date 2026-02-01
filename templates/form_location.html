@@ -1,0 +1,48 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="form-wrapper">
+
+    <div class="form-card">
+        <h2>
+            {% if status == '0' %}
+                Add Storage Location
+            {% else %}
+                Edit Storage Location
+            {% endif %}
+        </h2>
+
+        <form method="POST" action="/save_location">
+
+            <!-- bezakan add / edit -->
+            <input type="hidden" name="status" value="{{ status }}">
+
+            {% if status == '1' %}
+                <input type="hidden" name="location_id" value="{{ location[0] }}">
+            {% endif %}
+
+            <!-- LOCATION NAME -->
+            <label>Location Name</label>
+            <input type="text"
+                   name="location_name"
+                   value="{{ location[1] if status=='1' else '' }}"
+                   required>
+
+            <!-- DESCRIPTION -->
+            <label>Description</label>
+            <textarea name="description" rows="4" required>{{ location[2] if status=='1' else '' }}</textarea>
+
+            <!-- BUTTON -->
+            <div class="form-actions">
+                <button type="submit">
+                    {% if status == '0' %}Save{% else %}Update{% endif %}
+                </button>
+
+                <a href="/list_location" class="cancel">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+{% endblock %}

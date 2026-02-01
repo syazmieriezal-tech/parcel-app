@@ -1,0 +1,32 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="form-wrapper">
+
+    <div class="form-card">
+        <h2>Add Customer</h2>
+
+        <form method="POST" action="/save_customer">
+
+            <label>Recipient Name</label>
+            <input type="text" name="name" required>
+
+            <label>Phone</label>
+            <input type="text" name="phone" required>
+
+            <label>Email</label>
+            <input type="email" name="email">
+
+            <label>Address</label>
+            <textarea name="address"></textarea>
+
+            <div class="form-actions">
+                <button type="submit">Save</button>
+                <a href="/staff_home" class="cancel">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+{% endblock %}

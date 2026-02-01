@@ -1,0 +1,616 @@
+
+html, body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+}
+
+.b1 {
+  background-image: url('/static/images/img1.jpg');
+  background-size: cover;
+  color: #e8cfcf;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  padding: 0;
+}
+.main-content {
+  margin-left: 400px;   /* ruang untuk header */
+  padding: 0; /* 🔥 INI KUNCI SCROLL */
+  min-height: auto;
+}
+
+
+  
+  
+button {
+  padding: 8px 16px;
+  font-size: 0.59rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  animation: slidein 1s ease-forward;
+  border-radius: 10px;
+  border: 2px solid #fafafa;
+  background: #4a2c2c;
+  box-shadow: 4px 4px #8b8181;
+  cursor: pointer;
+  
+}
+
+button:active {
+  box-shadow: 4px 4px #cac0c0;
+  transform: translate(20px, 3px);
+}
+button:hover {
+  background: #ababab;
+  color: #252525;
+}
+h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+    text-shadow: 2px 2px #000000;
+    color: rgb(255, 255, 255);
+}
+nav {
+  position: fixed;
+  background: #343030;
+  width: 230px;          /* lebar sidebar */
+  height: 200vh;         /* penuh tinggi skrin */
+  padding: 20px 10px;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.nav-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.nav-logo img {
+  width: 200px;      /* saiz gambar */
+  border-radius: 10px;
+}
+
+/* TURUNKAN BUTTON KE BAWAH */
+.nav-menu {
+  margin-top: 20px;  /* ⬅️ ini yang buat turun */
+}
+
+/* BUTTON STYLE */
+.nav-menu button {
+  width: 100%;
+  margin: 15px 0;
+  padding: 12px;
+  font-size: 0.7rem;
+  background: #4a2c2c;
+  color: #d6d0d0;
+  border: 2px solid #e6cfcf;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.nav-menu button:hover {
+  background: #875959;
+}
+
+.header {
+  position: fixed;
+  height: auto;
+  left: 230px;
+  right: 0;
+  background: rgba(148,139,139,0.6);
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.base {
+  margin-top: 100px; /* ruang untuk header */
+  padding: 20px;
+    top: 0;
+  bottom: 20px;
+  font-size: 0.59rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 35px 0;
+  text-decoration: none;
+}
+  
+
+ h2 {
+  font-size: 2rem;
+  margin: 20px 0;
+    text-shadow: 2px 2px #000000;
+    color: rgb(255, 255, 255);
+}
+body {
+  margin-left: 0%;   /* lebar navbar */
+  padding-top: 120px;   /* elak header atas */
+}
+.content {
+
+  max-width: 1100px;
+  margin-left: 20px;
+  margin-right: auto;
+  background: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 12px;
+  position: left 40px;
+  overflow-x: auto;
+}
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  z-index: 1100;
+  margin-bottom: 200px;
+}
+.custom-table tr{
+  height: auto;
+}
+
+.custom-table th {
+  background: #4a2c2c;
+  color: white;
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.custom-table td {
+  padding: 10px;
+  text-align: center;
+  color: #000000;
+  vertical-align: middle;
+  background-color: #faf5f5;
+  
+}
+
+
+.custom-table button {
+  padding: 6px 14px;
+  font-size: 0.7rem;
+  border-radius: 8px;
+}
+.custom-table button:hover {
+  background: #e21515;
+}
+
+.custom-table .btnup:hover {
+  background: #52bf52;
+  
+}
+.form-wrapper {
+  width: 600px;
+  margin-left: 40px;          /* rapat dengan nav */
+  background: rgba(90, 50, 50, 0.88);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  animation: fadeup 1s ease;
+
+}
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-box {
+  width: 600px;
+  margin-left: 40px;          /* rapat dengan nav */
+  background: rgba(90, 50, 50, 0.88);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+/* ===== BACKGROUND ===== */
+body.b9 {
+  background-image: url('/static/images/img2.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* ===== WRAPPER (tengah page) ===== */
+.loginForm-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* ===== BOX LOGIN ===== */
+.login-container {
+  background: rgba(90, 50, 50, 0.9);
+  padding: 35px;
+  width: 360px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  color: #fff;
+}
+
+/* ===== TAJUK ===== */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+/* ===== FORM ===== */
+.loginForm input {
+width: 90%;
+  padding: 14px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 2px solid #e6cfcf;
+  outline: none;
+  font-size: 0.9rem;
+  background: #f3f3f3;  
+}
+
+/* ===== BUTTON ===== */
+.loginForm button {
+  width: 97%;
+  margin-top: 20px 20px 20px 0;
+  padding: 12px;
+  background: #4a2c2c;
+  color: #fff;
+  border: 3px solid #e6cfcf;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  box-shadow: 3px 3px #8b8181;
+  align-items: center;
+}
+
+.loginForm button:hover {
+  background: #6b3d3d;
+}
+
+/* ===== ERROR MESSAGE ===== */
+p {
+ text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ffb3b3;
+}
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* =========================
+   SUCCESS PAGE (NEW CLASS)
+========================= */
+.main-content.success-page {
+  margin-left: 700px;           /* sama dengan lebar nav */
+  width: 300px;;    /* baki ruang */
+  display: flex;
+  justify-content: center;      /* tengah secara horizontal */
+  align-items: center;          /* tengah secara vertical */
+  min-height: auto;
+  padding-bottom: 200px;
+}
+
+.success-box-new {
+  background: rgba(255,255,255,0.96);
+  padding: 50px 60px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 25px 25px 30px rgba(0, 0, 0, 0.25);
+  max-width: 420px;
+  width: 100%;
+  animation: fadeup 0.8s ease;
+}
+.success-box-new:hover{
+  background-color: rgb(222, 244, 237);
+  transition: all 0.3s ease;
+
+}
+
+.success-box-new p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+.success-box-new h1{
+  color: #524343;
+}
+.success-box-new::before {
+  content: "✓";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: #28a745;
+  color: rgb(25, 23, 23);
+  font-size: 38px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* ===== SUCCESS ACTION BUTTONS ===== */
+.success-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.success-btn {
+    width: 200px;
+    padding: 14px 0;
+    background: #34495e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* 🔥 Hover Animation (Zoom) */
+.success-btn:hover {
+    background: #1f2d3a;
+    transform: scale(1.08);
+}
+
+
+.card {
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyZCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #e4cbcb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow:  5px 5px 10px #2c202080;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+}
+.card a {
+  color: #020101;
+  font-style: italic
+}
+ 
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.background {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)   ;
+}
+
+
+
+
+
+
+
+/* =====================
+   RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =====================
+   SIDEBAR
+===================== */
+.sidebar {
+    width: 260px;
+    background: #0d6efd;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* LOGO AREA */
+.logo-box {
+    text-align: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+}
+
+.logo-box h2 {
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+/* MENU */
+.menu a {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* LOGOUT */
+.logout-btn {
+    margin-top: auto;
+    background: #dc3545;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #bb2d3b;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+/* =====================
+   FORM CENTERING
+===================== */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+.form-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* FORM INPUT */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* FORM ACTIONS */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form button {
+    background: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0b5ed7;
+}
+
+.form-actions .cancel {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.form-actions .cancel:hover {
+    text-decoration: underline;
+}

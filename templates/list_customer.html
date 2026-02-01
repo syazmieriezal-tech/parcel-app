@@ -1,0 +1,44 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+
+    <div class="page-header">
+        <h2>List Customer</h2>
+        
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Tracking Number</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for c in rows %}
+                <tr>
+                    <td>{{ c[0] }}</td>
+                    <td>{{ c[1] }}</td>
+                    <td>{{ c[2] }}</td>
+                    <td>{{ c[3] }}</td>
+                    <td>{{ c[4] }}</td>
+                    <td>{{ c[5] if c[5] else '-' }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6">Tiada data customer</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

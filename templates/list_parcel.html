@@ -1,0 +1,54 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+
+    <div class="page-header">
+        <h2>List Parcel</h2>
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Parcel ID</th>
+                    <th>Tracking Number</th>
+                    <th>Customer Name</th>
+                    <th>Parcel Type</th>
+                    <th>Location</th>
+                    <th>Date Received</th>
+                    <th>Date Collected</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for p in rows %}
+                <tr>
+                    <td>{{ p[0] }}</td>
+                    <td>{{ p[1] }}</td>
+                    <td>{{ p[5] }}</td>
+                    <td>{{ p[2] }}</td>
+                    <td>{{ p[6] }}</td>
+                    <td>{{ p[3] }}</td>
+                    <td>{{ p[4] if p[4] else '-' }}</td>
+                    <td>
+                        <a href="/edit_parcel/{{ p[0] }}" class="btn-edit">Edit</a>
+                        <a href="/delete_parcel/{{ p[0] }}"
+                           class="btn-delete"
+                           onclick="return confirm('Padam parcel ini?')">
+                           Delete
+                        </a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="8">Tiada data</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Login</title>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='css/parcel.css') }}">
+</head>
+<body class="login-body">
+
+<div class="login-wrapper">
+    <div class="login-box">
+
+        <h2>Staff Login</h2>
+
+        <form method="POST" action="/do_login_staff">
+            <label>Staff ID</label>
+            <input type="text" name="staff_id" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="register-section">
+            <p>New staff?</p>
+            <a href="/register_staff" class="register-link">
+                Register New Staff
+            </a>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <p class="error">{{ messages[0] }}</p>
+          {% endif %}
+        {% endwith %}
+
+    </div>
+</div>
+
+</body>
+</html>

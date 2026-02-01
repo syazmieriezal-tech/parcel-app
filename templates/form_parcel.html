@@ -1,0 +1,79 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="form-wrapper">
+
+    <div class="form-card">
+        <h2>
+            {% if status == '0' %}
+                Add Parcel
+            {% else %}
+                Update Parcel
+            {% endif %}
+        </h2>
+
+        <form method="POST" action="/save_parcel">
+
+            <input type="hidden" name="status" value="{{ status }}">
+
+            {% if status == '1' %}
+                <input type="hidden" name="parcel_id" value="{{ parcel[0] }}">
+            {% endif %}
+
+            <!-- CUSTOMER -->
+            <label>Recipient Name</label>
+            <select name="customer_id" required>
+                {% for c in customers %}
+                <option value="{{ c[0] }}"
+                    {% if status=='1' and parcel[1]==c[0] %}selected{% endif %}>
+                    {{ c[1] }}
+                </option>
+                {% endfor %}
+            </select>
+
+            <!-- TRACKING -->
+            <label>Tracking Number</label>
+            <input type="text" name="tracking_number"
+                   value="{{ parcel[2] if status=='1' else '' }}" required>
+
+            <!-- PARCEL TYPE -->
+            <label>Parcel Type</label>
+            <input type="text" name="parcel_type"
+                   value="{{ parcel[3] if status=='1' else '' }}" required>
+
+            <!-- DATE RECEIVED -->
+            <label>Date Received</label>
+            <input type="date" name="date_received"
+                   value="{{ parcel[4] if status=='1' else '' }}" required>
+
+            <!-- DATE COLLECTED -->
+            <label>Date Collected</label>
+            <input type="date" name="date_collected"
+                   value="{{ parcel[5] if status=='1' else '' }}">
+
+            <!-- LOCATION -->
+           <label>Storage Location</label>
+<select name="location_id">
+  {% for loc in locations %}
+    <option value="{{ loc[0] }}">{{ loc[1] }}</option>
+  {% endfor %}
+</select>
+
+
+
+
+
+            <!-- BUTTON -->
+            <div class="form-actions">
+                <button type="submit">
+                    {% if status=='0' %}Save{% else %}Update{% endif %}
+                </button>
+
+                <a href="/list_parcel" class="cancel">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+{% endblock %}

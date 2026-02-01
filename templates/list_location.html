@@ -1,0 +1,48 @@
+{% extends "home_staff.html" %}
+
+{% block content %}
+<div class="content-wrapper">
+
+    <div class="page-header">
+        <h2>Storage Location List</h2>
+        <a href="/new_location" class="btn-primary">+ Add Location</a>
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Location Name</th>
+                    <th>Description</th>
+                    <th width="160">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>
+                        <a href="/edit_location/{{ row[0] }}" class="btn-edit">Edit</a>
+                        <a href="/delete_location/{{ row[0] }}"
+                           class="btn-delete"
+                           onclick="return confirm('Delete this location?')">
+                           Delete
+                        </a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" style="text-align:center;">
+                        No storage location found
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

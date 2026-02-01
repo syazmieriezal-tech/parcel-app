@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parcel System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/parcel.css') }}">
+</head>
+<script>
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.menu-link').forEach(link => {
+        if (currentPath.startsWith(link.dataset.path)) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+<body>
+
+<div class="layout">
+
+    
+    <aside class="sidebar">
+
+        <div class="logo-box">
+            <img src="static/images/parsel.jpg" alt="logo-box">
+        </div>
+
+        
+    <form method="GET" action="/search_parcel">
+    <input type="text" name="keyword" placeholder="Tracking No / Nama Customer"
+           value="{{ keyword or '' }}" required>
+    <button type="submit">Search</button>
+</form>
+
+
+       <div class="menu">
+    <a href="/new_customer"
+       class="{% if request.path == '/new_customer' %}active{% endif %}">
+       Add Customer
+    </a>
+
+    <a href="/list_customer"
+       class="{% if request.path == '/list_customer' %}active{% endif %}">
+       List Customer
+    </a>
+
+    <a href="/new_parcel"
+       class="{% if request.path == '/new_parcel' %}active{% endif %}">
+       Add Parcel
+    </a>
+
+    <a href="/list_parcel"
+       class="{% if request.path == '/list_parcel' %}active{% endif %}">
+       List Parcel
+    </a>
+
+    <a href="/list_location"
+       class="{% if request.path == '/list_location' %}active{% endif %}">
+       Storage Location
+    </a>
+</div>
+
+
+
+        <a href="/logout" class="logout-btn">Logout</a>
+    </aside>
+
+    
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+</div>
+
+</body>
+</html>
